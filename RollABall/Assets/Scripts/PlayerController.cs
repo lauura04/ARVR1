@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-
+        Debug.Log("Trigger detectado: " + other.name);
         if (other.CompareTag("PickUp"))
         {
             sfxSource.PlayOneShot(coinSound);
