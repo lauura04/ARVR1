@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioClip coinSound;
+    [SerializeField] PumpkingCounter pumpkingCounter;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("PickUp"))
         {
             sfxSource.PlayOneShot(coinSound);
+            pumpkingCounter.OnTriggerEvent();
             other.gameObject.SetActive(false);
         }
     }
