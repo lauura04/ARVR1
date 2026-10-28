@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
     public float speed = 5f;
-
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip coinSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,8 +43,10 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("PickUp"))
         {
+            sfxSource.PlayOneShot(coinSound);
             other.gameObject.SetActive(false);
         }
     }
