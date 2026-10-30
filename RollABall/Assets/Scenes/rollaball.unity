@@ -18445,7 +18445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeCounter
   timeText: {fileID: 1501599187}
-  startTime: 5
+  startTime: 10
 --- !u!114 &1501599187
 MonoBehaviour:
   m_ObjectHideFlags: 0
